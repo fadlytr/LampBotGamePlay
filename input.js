@@ -22,6 +22,10 @@ export default class InputHandler {
 				// }
 			} else if (key == 13) { // enter
 				// for (let i = 0; i < game.instructionsAtMain.length; i++) {
+					if (game.GAME_STATE == 1 && game.ptr == game.instructionsAtMain.length) {
+						game.reset();
+						return;
+					}
 					if (game.ptr < game.instructionsAtMain.length) {
 						game.robot.move(game.instructionsAtMain[game.ptr].id);
 						game.ptr++;
@@ -35,9 +39,9 @@ export default class InputHandler {
 				// game.robot.instructions = game.instructionsAtMain;
 				// game.robot.animate();
 			} else if (key == 32) {
-				if (game.GAME_STATE == 1 && game.ptr == game.instructionsAtMain.length) {
-					game.reset();
-				}
+				// if (game.GAME_STATE == 1 && game.ptr == game.instructionsAtMain.length) {
+				// 	game.reset();
+				// }
 			} else {
 				if (instructionPicked < game.instructionsAtBox.length && !game.instructionsAtBox[instructionPicked].deleted && game.GAME_STATE == 0) {
 					game.instructionsAtBox[instructionPicked].deleted = true;

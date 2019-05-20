@@ -82,12 +82,12 @@ export default class Game {
 				ctx.font = "30px Arial";
 				ctx.fillStyle = "green";
 				ctx.fillText('congrats! you win!', 250, 300 - 20);
-				ctx.fillText('Press SPACEBAR to continue', 250, 350 - 20);
+				ctx.fillText('Press ENTER to restart', 250, 350 - 20);
 			} else {
 				ctx.font = "30px Arial";
 				ctx.fillStyle = "red";
 				ctx.fillText('you lose! so bad! :(', 250, 300 - 20);
-				ctx.fillText('Press SPACEBAR to continue', 250, 350 - 20);
+				ctx.fillText('Press ENTER to restart', 250, 350 - 20);
 			}
 			return;
 		}
