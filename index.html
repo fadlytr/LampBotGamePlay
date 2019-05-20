@@ -1,0 +1,32 @@
+<html>
+  <title> LampBot </title>
+  <meta charset="UTF-8" />
+  <style>
+    #gameScreen {
+      border: 1px solid black;
+    }
+
+    img {
+      display: none;
+    }
+  </style>
+  <body>
+    - Tekan angka yang sesuai dengan instruksi untuk pindahkan instruksi ke main <br>
+    - Tekan tombol delete untuk undo <br>
+    - Setelah selesai mengurutkan instruksi, (karena belum sempurna) tekan enter sebanyak N kali (N = jumlah instruksi pada main) sampai game selesai <br> <br>
+    <canvas id="gameScreen" width="800" height="570" style="background: url('./Asset/background-3.png')"> 
+    </canvas>
+    <br>
+    <img src="Asset/command-2-up.png" width="40" height="40" id="img_maju">
+    <img src="Asset/command-5-turn-right.png" width="40" height="40" id="img_belok_kanan">
+    <img src="Asset/command-4-turn-left.png" width="40" height="40" id="img_belok_kiri">
+    <img src="Asset/command-3-lamp.png" width="40" height="40" id="img_lampu">
+    <img src="Asset/command-6-jump.png" width="40" height="40" id="img_lompat">
+    <img src="Asset/stage-area-01.png" width="300" height="300" id="img_stage">
+    <img src="Asset/bot-male.png" width="50" height="50" id="img_robot_kebawah">
+    <img src="Asset/bot-male-11.png" width="50" height="50" id="img_robot_kekanan">
+    <img src="Asset/bot-male-15.png" width="50" height="50" id="img_robot_kekiri">
+    <img src="Asset/main-area.png" width="50" height="50" id="img_main_area">
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
