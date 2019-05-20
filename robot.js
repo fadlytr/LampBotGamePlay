@@ -24,7 +24,6 @@ export default class Robot {
 	}
 
 	getImgByDir() {
-		console.log('wkwk');
 		if (this.curd == 0) {
 			this.img = document.getElementById('img_robot_kebawah');
 		}

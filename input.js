@@ -9,7 +9,7 @@ export default class InputHandler {
 			let key = event.keyCode;
 			let instructionPicked = key - NUM_1;
 			// let isShift = event.shiftKey;
-			// console.log(key);
+			console.log(key);
 			if (key == 46 && game.GAME_STATE == 0) { // delete
 				let idx = game.instructionsAtMain.length - 1;
 				game.instructionsAtMain[idx].deleted = true;
@@ -34,6 +34,10 @@ export default class InputHandler {
 				// }
 				// game.robot.instructions = game.instructionsAtMain;
 				// game.robot.animate();
+			} else if (key == 32) {
+				if (game.GAME_STATE == 1 && game.ptr == game.instructionsAtMain.length) {
+					game.reset();
+				}
 			} else {
 				if (instructionPicked < game.instructionsAtBox.length && !game.instructionsAtBox[instructionPicked].deleted && game.GAME_STATE == 0) {
 					game.instructionsAtBox[instructionPicked].deleted = true;

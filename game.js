@@ -51,6 +51,24 @@ export default class Game {
 
 	}
 
+	reset() {
+		let n = this.instructionsAtMain.length;
+		for (let i = 0; i < n; i++) {
+			let idx = this.instructionsAtMain.length - 1;
+			this.instructionsAtMain[idx].deleted = true;
+			this.instructionsAtBox[this.instructionsAtMainFrom[idx]].deleted = false;
+			this.instructionsAtMain.pop();
+			this.instructionsAtMainFrom.pop();
+		}
+		this.robot.cury = 0;
+		this.robot.curx = 0;
+		this.robot.position = {x: 115, y:65};
+		this.robot.remainingLamp = 1;
+		this.robot.curd = 0;
+		this.GAME_STATE = 0;
+		this.ptr = 0;
+	}
+
 	update() {
 		// this.instructionsAtBox = this.instructionsAtBox.filter(object => !object.deleted);
 		for (let i = 0; i < this.instructionsAtBox.length; i++) {
@@ -63,11 +81,13 @@ export default class Game {
 			if (this.robot.remainingLamp == 0) {
 				ctx.font = "30px Arial";
 				ctx.fillStyle = "green";
-				ctx.fillText('congrats! you win!', 300, 300);
+				ctx.fillText('congrats! you win!', 250, 300 - 20);
+				ctx.fillText('Press SPACEBAR to continue', 250, 350 - 20);
 			} else {
 				ctx.font = "30px Arial";
 				ctx.fillStyle = "red";
-				ctx.fillText('you lose! so bad! :(', 300, 300);
+				ctx.fillText('you lose! so bad! :(', 250, 300 - 20);
+				ctx.fillText('Press SPACEBAR to continue', 250, 350 - 20);
 			}
 			return;
 		}
